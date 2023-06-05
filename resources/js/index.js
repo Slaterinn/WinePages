@@ -346,7 +346,7 @@
     .then((response) => response.json())
     .then((json) => console.log(json));
 */
-fetch('../data/wines_json.json')
+fetch('https://github.com/Slaterinn/WinePages/tree/main/resources/data/wines_json.json')
   .then(function (response) {
     return response.json();
   })
