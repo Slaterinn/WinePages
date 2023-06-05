@@ -23,19 +23,23 @@ function appendData(data) {
   for (var i = 0; i < data.length; i++) {
     var card_container = document.createElement("div");
     card_container.className = "card container myData";
+    
     var card_content = document.createElement("div");
     card_content.className = "card-content"
+    
     var card_media = document.createElement("div");
     card_media.className = "media"
+	
 	var card_media_content = document.createElement("div");
     card_media_content.className = "media-content"
+	
 	var wine_title = document.createElement("div");
     wine_title.className = "title"
 
-    mainContainer.appendChild(card_container);
+    card_media_content.appendChild(wine_title);
+    card_media.appendChild(card_media_content);
+    card_content.appendChild(card_media);
     mainContainer.appendChild(card_content);
-    mainContainer.appendChild(card_media);
-    mainContainer.appendChild(card_media_content);
 
 
     wine_title.innerHTML = data[i].wine_name;
@@ -43,4 +47,3 @@ function appendData(data) {
   }
 }
 
-/*appendData(data)*/
