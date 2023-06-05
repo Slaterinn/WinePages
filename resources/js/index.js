@@ -342,17 +342,13 @@
 ]*/
 
 
-/*fetch('./data/wines_json.json')
-    .then((response) => response.json())
-    .then((json) => console.log(json));
-*/
+/*
 fetch('../data/wines_json.json')
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
     appendData(data);
-    console.log('kalla í appendData með data')
   })
   .catch(function (err) {
     console.log(err);
@@ -367,6 +363,20 @@ function appendData(data) {
     div.innerHTML = 'Name: ' + data[i].wine_name + ' ' + data[i].recommendation;
     mainContainer.appendChild(div);
   }
-}
+}*/
 
 /*appendData(data)*/
+
+const fs = require('fs');
+const json_data = require('../data/wines_json.json');
+
+fs.readFile(json_data, 'utf8', function (err, data) {
+  try {
+    data = JSON.parse(data)
+    for (let i in data){
+    console.log('Name:',data[i].name)
+    }
+  } catch (e) {
+    // Catch error in case file doesn't exist or isn't valid JSON
+  }
+});
