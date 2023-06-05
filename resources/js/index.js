@@ -39,7 +39,8 @@ function appendData(data) {
     card_media_content.appendChild(wine_title);
     card_media.appendChild(card_media_content);
     card_content.appendChild(card_media);
-    mainContainer.appendChild(card_content);
+    card_container.appendChild(card_content);
+    mainContainer.appendChild(card_container);
 
 
     wine_title.innerHTML = data[i].wine_name;
@@ -47,3 +48,23 @@ function appendData(data) {
   }
 }
 
+
+
+	<div class="card container myData">
+	  <div class="card-content">
+	    <div class="media">
+	      <div class="media-content">
+	        <!--<p class="title is-4">John Smith</p> -->
+	        <!--<p class="subtitle is-6">@johnsmith</p>-->
+	      </div>
+	    </div>
+
+	    <div class="content">
+	      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+	      <a href="#">#css</a> <a href="#">#responsive</a>
+	      <br>
+	      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+	    </div>
+	  </div>
+	</div>
