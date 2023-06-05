@@ -36,6 +36,7 @@ function appendData(data) {
 	var wine_title = document.createElement("div");
     wine_title.className = "title"
 
+    wine_title.innerHTML = data[i].wine_name;
     card_media_content.appendChild(wine_title);
     card_media.appendChild(card_media_content);
     card_content.appendChild(card_media);
@@ -43,8 +44,7 @@ function appendData(data) {
     mainContainer.appendChild(card_container);
 
 
-    wine_title.innerHTML = data[i].wine_name;
-    mainContainer.appendChild(wine_title);
+    
   }
 }
 
