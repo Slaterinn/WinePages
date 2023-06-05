@@ -12,7 +12,8 @@ fetch('./resources/data/wines_json.json')
 
 
 function appendData(data) {
-  var mainContainer = document.getElementByClassName("media-content");
+  var findContainers = document.getElementsByClassName("media-content");
+  var mainContainer = findContainers[0]
   for (var i = 0; i < data.length; i++) {
     var wine_title = document.createElement("p");
     wine_title.className = "title is-4";
