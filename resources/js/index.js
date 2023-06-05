@@ -41,7 +41,7 @@ function appendData(data) {
     card_media.appendChild(card_media_content);
     card_content.appendChild(card_media);
     card_container.appendChild(card_content);
-    mainContainer.appendChild(wine_title);
+    mainContainer.appendChild(card_container);
 
 
     
