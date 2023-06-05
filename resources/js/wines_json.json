@@ -1,4 +1,4 @@
-/*let json_data = [
+[
   {
     "pk_wine": 8792,
     "vivino_id": 2714550,
@@ -339,30 +339,4 @@
     "insert_date_vivino": "2023-03-03",
     "modified_date_vivino": "2023-03-03"
   }
-]*/
-
-
-
-fetch('.wines_json.json')
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    appendData(data);
-  })
-  .catch(function (err) {
-    console.log(err);
-  });
-
-
-
-function appendData(data) {
-  var mainContainer = document.getElementById("myData");
-  for (var i = 0; i < data.length; i++) {
-    var div = document.createElement("div");
-    div.innerHTML = 'Name: ' + data[i].wine_name + ' ' + data[i].recommendation;
-    mainContainer.appendChild(div);
-  }
-}
-
-/*appendData(data)*/
+]
