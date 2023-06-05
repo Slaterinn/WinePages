@@ -33,10 +33,13 @@ function appendData(data) {
 	var card_media_content = document.createElement("div");
     card_media_content.className = "media-content"
 	
-	var wine_title = document.createElement("div");
+	var wine_title = document.createElement("p");
     wine_title.className = "title"
-
     wine_title.innerHTML = data[i].wine_name;
+    var wine_subtitle = document.createElement("p");
+    wine_title.className = "subtitle"
+    wine_subtitle.innerHTML = data[i].producer_vivino;
+
     card_media_content.appendChild(wine_title);
     card_media.appendChild(card_media_content);
     card_content.appendChild(card_media);
