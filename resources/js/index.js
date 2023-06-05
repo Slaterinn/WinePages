@@ -12,10 +12,11 @@ fetch('./resources/data/wines_json.json')
 
 
 function appendData(data) {
-  var mainContainer = document.getElementById("myData");
+  var mainContainer = document.getElementByClassName("media-content");
   for (var i = 0; i < data.length; i++) {
-    var div = document.createElement("div");
-    div.innerHTML = 'Name: ' + data[i].wine_name + ' ' + data[i].recommendation;
+    var wine_title = document.createElement("p");
+    wine_title.className = "title is-4";
+    div.innerHTML = data[i].wine_name;
     mainContainer.appendChild(div);
   }
 }
