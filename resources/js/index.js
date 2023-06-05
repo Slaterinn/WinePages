@@ -368,4 +368,4 @@ function appendData(data) {
   }
 }
 
-appendData(json_data)
+appendData(wines_json)
