@@ -17,8 +17,8 @@ function appendData(data) {
   for (var i = 0; i < data.length; i++) {
     var wine_title = document.createElement("p");
     wine_title.className = "title is-4";
-    div.innerHTML = data[i].wine_name;
-    mainContainer.appendChild(div);
+    wine_title.innerHTML = data[i].wine_name;
+    mainContainer.appendChild(wine_title);
   }
 }
 
