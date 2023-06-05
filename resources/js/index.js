@@ -343,7 +343,7 @@
 
 
 
-fetch('.wines_json.json')
+fetch('./wines_json.json')
   .then(function (response) {
     return response.json();
   })
