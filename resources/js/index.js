@@ -41,6 +41,7 @@ function appendData(data) {
     wine_subtitle.innerHTML = data[i].producer_vivino;
 
     card_media_content.appendChild(wine_title);
+    card_media_content.appendChild(wine_subtitle);
     card_media.appendChild(card_media_content);
     card_content.appendChild(card_media);
     card_container.appendChild(card_content);
