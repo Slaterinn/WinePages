@@ -57,7 +57,7 @@ function appendData(data) {
   	var country_text = document.createElement("p");
   	country_text.className = "info-item";
   	country_text.innerHTM = 'Land: ';
-  	wine_info.appendChild(producer_text);
+  	wine_info.appendChild(country_text);
   	var country = document.createElement("span");
   	country.className = "has-text-weight-medium";
   	country.innerHTML= data[i].country;
