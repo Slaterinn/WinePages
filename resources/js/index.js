@@ -9,13 +9,6 @@ fetch('./resources/data/wines_json.json')
     console.log(err);
   });
 
-var myEl = document.createElement('div');
-
-var myLi = document.createElement('li');
-
-var myA = document.createElement('a');
-
-var myImg = document.createElement('img');
 
 function appendData(data) {
   var findContainers = document.getElementsByClassName("cards");
