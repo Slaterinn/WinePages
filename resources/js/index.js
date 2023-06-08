@@ -11,34 +11,56 @@ fetch('./resources/data/wines_json.json')
 
 
 function appendData(data) {
-  var findContainers = document.getElementsByClassName("cards");
-  var mainContainer = findContainers[0]
+  var mainContainer = document.getElementsByClassName("column");
   for (var i = 0; i < data.length; i++) {
-    var card_container = document.createElement("div");
-    card_container.className = "card container myData";
-    
-    var card_content = document.createElement("div");
-    card_content.className = "card-content"
-    
-    var card_media = document.createElement("div");
-    card_media.className = "media"
-	
-	var card_media_content = document.createElement("div");
-    card_media_content.className = "media-content"
-	
-	var wine_title = document.createElement("p");
-    wine_title.className = "title"
-    wine_title.innerHTML = data[i].wine_name;
-    var wine_subtitle = document.createElement("p");
-    wine_title.className = "subtitle"
-    wine_subtitle.innerHTML = data[i].producer_vivino;
+  	var card = document.createElement("div");
+  	card.className = "card p-4 py-6 has-background-warning-light rounded-xl is-cursor-pointer transform is-duration-300 hover-translate-y";
+  	mainContainer.appendChild(card);
 
-    card_media_content.appendChild(wine_title);
-    card_media_content.appendChild(wine_subtitle);
-    card_media.appendChild(card_media_content);
-    card_content.appendChild(card_media);
-    card_container.appendChild(card_content);
-    mainContainer.appendChild(card_container);
+  	var card_content = document.createElement("div");
+  	card_content.className = "card-content"
+  	card.appendChild(card_content);
+
+  	var content = document.createElement("div");
+  	content.className = "content";
+  	card_content.appendChild(content);
+
+  	var wine_type = document.createElement("h5");
+  	wine_type.className = "wine-type";
+  	wine_type.innerHTML= data[i].category;
+  	content.appendChild(wine_type);
+
+  	var wine_name = document.createElement("h3");
+  	wine_name.className = "is-size-1 has-text-weight-bold mb-6";
+  	wine_name.innerHTML= data[i].wine_name;
+  	content.appendChild(wine_name);
+
+  	var wine_rec = document.createElement("h3");
+  	wine_rec.className = "is-size-5 mb-5";
+  	wine_rec.innerHTML= data[i].recommendation;
+  	content.appendChild(-wine_rec);
+
+  	var wine_info = document.createElement("div");
+  	wine_info.className = "is-size-6 has-text-weight-light"
+  	content.appendChild(wine_info);
+
+  	var producer_text = document.createElement("p");
+  	producer_text.className = "info-item";
+  	producer_text.innerHTM = 'Framleiðandi: ';
+  	wine_info.appendChild(producer_text);
+  	var producer = document.createElement("span");
+  	producer.className = "has-text-weight-medium";
+  	producer.innerHTML= data[i].producer_vivino;
+  	producer_text.appendChild(producer);
+
+  	var country_text = document.createElement("p");
+  	country_text.className = "info-item";
+  	country_text.innerHTM = 'Land: ';
+  	wine_info.appendChild(producer_text);
+  	var country = document.createElement("span");
+  	country.className = "has-text-weight-medium";
+  	country.innerHTML= data[i].country;
+  	country_text.appendChild(country);
     
   }
 }
