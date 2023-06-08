@@ -47,7 +47,8 @@ function appendData(data) {
     card_container.appendChild(card_content);
     mainContainer.appendChild(card_container);
 
-    var htmlBlock = `<div>Hello this is a div</div>`
+    var htmlBlock = `<div>Hello this is a div</div>`;
+    mainContainer.appendChild(htmlBlock);
     
   }
 }
