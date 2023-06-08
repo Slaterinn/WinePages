@@ -1,7 +1,49 @@
-h1{
-	color: red;
+body {
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h3{
+  margin-top: 0em !important;
 }
 
-.page-header{
+.card{
+  margin-top: 2em;
+}
 
+.wine-type{
+  color: #A82548 !important/*Rauðvín*/
+  /*color: #dbdd46 !important; /*Hvítvín*/
+  /*color: #F6CE97 !important;/*Freyðivín*/
+  /*color: #F98E72 !important;/*Rósavín*/
+}
+
+.is-img-center {
+    margin: 0 auto;
+}
+
+.rounded-xl {
+    border-radius: 0.75rem !important;
+}
+
+.is-cursor-pointer {
+    cursor: pointer !important;
+}
+
+.transform {
+    -webkit-transform: translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+    transform: translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+}
+
+.is-duration-300 {
+    transition-duration: 0.3s;
+}
+
+.hover-translate-y:hover {
+    -webkit-transform: translateX(0) translateY(-0.25rem) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1) !important;
+    transform: translateX(0) translateY(-0.25rem) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1) !important;
+}
+
+.info-item{
+  margin-bottom: 0 !important;
 }
