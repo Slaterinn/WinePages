@@ -47,7 +47,7 @@ function appendData(data) {
 
   	var producer_text = document.createElement("p");
   	producer_text.className = "info-item";
-  	producer_text.innerHTM = 'Framleiðandi: ';
+  	producer_text.innerHTML = 'Framleiðandi: ';
   	wine_info.appendChild(producer_text);
   	var producer = document.createElement("span");
   	producer.className = "has-text-weight-medium";
@@ -56,7 +56,7 @@ function appendData(data) {
 
   	var country_text = document.createElement("p");
   	country_text.className = "info-item";
-  	country_text.innerHTM = 'Land: ';
+  	country_text.innerHTML = 'Land: ';
   	wine_info.appendChild(country_text);
   	var country = document.createElement("span");
   	country.className = "has-text-weight-medium";
@@ -65,7 +65,7 @@ function appendData(data) {
 
    	var area_text = document.createElement("p");
   	area_text.className = "info-item";
-  	area_text.innerHTM = 'Svæði: ';
+  	area_text.innerHTML = 'Svæði: ';
   	wine_info.appendChild(area_text);
   	var area = document.createElement("span");
   	area.className = "has-text-weight-medium";
@@ -74,7 +74,7 @@ function appendData(data) {
 
   	var taste_text = document.createElement("p");
   	taste_text.className = "info-item";
-  	taste_text.innerHTM = 'Bragðflokkur: ';
+  	taste_text.innerHTML = 'Bragðflokkur: ';
   	wine_info.appendChild(taste_text);
   	var taste = document.createElement("span");
   	taste.className = "has-text-weight-medium";
