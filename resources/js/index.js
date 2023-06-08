@@ -63,23 +63,23 @@ function appendData(data) {
   	country.innerHTML= data[i].country;
   	country_text.appendChild(country);
 
-   	var producer_text = document.createElement("p");
-  	producer_text.className = "info-item";
-  	producer_text.innerHTM = 'Framleiðandi: ';
-  	wine_info.appendChild(producer_text);
-  	var producer = document.createElement("span");
-  	producer.className = "has-text-weight-medium";
-  	producer.innerHTML= data[i].producer_vivino;
-  	producer_text.appendChild(producer);
+   	var area_text = document.createElement("p");
+  	area_text.className = "info-item";
+  	area_text.innerHTM = 'Svæði: ';
+  	wine_info.appendChild(area_text);
+  	var area = document.createElement("span");
+  	area.className = "has-text-weight-medium";
+  	area.innerHTML= data[i].origin_place;
+  	area_text.appendChild(area);
 
-  	var country_text = document.createElement("p");
-  	country_text.className = "info-item";
-  	country_text.innerHTM = 'Land: ';
-  	wine_info.appendChild(producer_text);
-  	var country = document.createElement("span");
-  	country.className = "has-text-weight-medium";
-  	country.innerHTML= data[i].country;
-  	country_text.appendChild(country);
+  	var taste_text = document.createElement("p");
+  	taste_text.className = "info-item";
+  	taste_text.innerHTM = 'Bragðflokkur: ';
+  	wine_info.appendChild(taste_text);
+  	var taste = document.createElement("span");
+  	taste.className = "has-text-weight-medium";
+  	taste.innerHTML= data[i].taste_group;
+  	taste_text.appendChild(taste);
     
   }
 }
