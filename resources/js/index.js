@@ -36,10 +36,10 @@ function appendData(data) {
   	wine_name.innerHTML= data[i].wine_name;
   	content.appendChild(wine_name);
 
-  	var wine_rec = document.createElement("h3");
+  	var wine_rec = document.createElement("h4");
   	wine_rec.className = "is-size-5 mb-5";
   	wine_rec.innerHTML= data[i].recommendation;
-  	content.appendChild(-wine_rec);
+  	content.appendChild(wine_rec);
 
   	var wine_info = document.createElement("div");
   	wine_info.className = "is-size-6 has-text-weight-light";
