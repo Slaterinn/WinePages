@@ -17,9 +17,9 @@ function appendData(data) {
   	var card = document.createElement("div");
   	card.className = "card p-4 py-6 has-background-warning-light rounded-xl is-cursor-pointer transform is-duration-300 hover-translate-y";
   	mainContainer.appendChild(card);
-/*
+
   	var card_content = document.createElement("div");
-  	card_content.className = "card-content"
+  	card_content.className = "card-content";
   	card.appendChild(card_content);
 
   	var content = document.createElement("div");
@@ -42,7 +42,7 @@ function appendData(data) {
   	content.appendChild(-wine_rec);
 
   	var wine_info = document.createElement("div");
-  	wine_info.className = "is-size-6 has-text-weight-light"
+  	wine_info.className = "is-size-6 has-text-weight-light";
   	content.appendChild(wine_info);
 
   	var producer_text = document.createElement("p");
@@ -80,7 +80,7 @@ function appendData(data) {
   	country.className = "has-text-weight-medium";
   	country.innerHTML= data[i].country;
   	country_text.appendChild(country);
-    */
+    
   }
 }
 
