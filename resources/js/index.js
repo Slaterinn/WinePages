@@ -11,12 +11,13 @@ fetch('./resources/data/wines_json.json')
 
 
 function appendData(data) {
-  var mainContainer = document.getElementsByClassName("column");
+  var findContainer = document.getElementsByClassName("column");
+  mainContainer = findContainer[0];
   for (var i = 0; i < data.length; i++) {
   	var card = document.createElement("div");
   	card.className = "card p-4 py-6 has-background-warning-light rounded-xl is-cursor-pointer transform is-duration-300 hover-translate-y";
   	mainContainer.appendChild(card);
-
+/*
   	var card_content = document.createElement("div");
   	card_content.className = "card-content"
   	card.appendChild(card_content);
@@ -61,7 +62,25 @@ function appendData(data) {
   	country.className = "has-text-weight-medium";
   	country.innerHTML= data[i].country;
   	country_text.appendChild(country);
-    
+
+   	var producer_text = document.createElement("p");
+  	producer_text.className = "info-item";
+  	producer_text.innerHTM = 'Framleiðandi: ';
+  	wine_info.appendChild(producer_text);
+  	var producer = document.createElement("span");
+  	producer.className = "has-text-weight-medium";
+  	producer.innerHTML= data[i].producer_vivino;
+  	producer_text.appendChild(producer);
+
+  	var country_text = document.createElement("p");
+  	country_text.className = "info-item";
+  	country_text.innerHTM = 'Land: ';
+  	wine_info.appendChild(producer_text);
+  	var country = document.createElement("span");
+  	country.className = "has-text-weight-medium";
+  	country.innerHTML= data[i].country;
+  	country_text.appendChild(country);
+    */
   }
 }
 
