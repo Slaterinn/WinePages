@@ -1,4 +1,4 @@
-const data;
+let data;
 
 fetch('./resources/data/wines_json.json')
   .then(function (response) {
