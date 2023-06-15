@@ -11,11 +11,30 @@ fetch('./resources/data/wines_json.json')
     data = fetched_data.sort((a, b) => {
     if (a.recommendation > b.recommendation) {
       return -1;
+      }
+    });
+    function typeColor() {
+      //Declare variables:
+      var cards, wine_type, wine_type_value;
+      cards = document.getElementsByClassName("card");
+      //wine_type = document.getElementsByClassName("wine-type");
+      //wine_type_value = wine_type.innerHTML.toUpperCase();
+        
+      //Loop through all cards and change color of all wine type texts depending on the value
+      
+      for (i=0; i<cards.length; i++) {
+        var card = cards[i].getElementsByClassName("wine-type");
+        if(card && card[0].innerHTML === 'Red Wine') {
+          card[0].style.color = "#A82548";
+        } else if (card && card[0].innerHTML === 'Rose'){
+          card[0].style.color = "#F98E72";
+        } else if (card && card[0].innerHTML === 'Sparkling Wine'){
+          card[0].style.color = "#F6CE97";
+        } else {
+          card[0].style.color = "#dbdd46";
+        }
+      }
     }
-
-
-  });
-
   })
   .catch(function (err) {
     console.log(err);
@@ -376,28 +395,7 @@ function sortByField(selectedInput){
 
 
 
-function typeColor() {
-  //Declare variables:
-  var cards, wine_type, wine_type_value;
-  cards = document.getElementsByClassName("card");
-  //wine_type = document.getElementsByClassName("wine-type");
-  //wine_type_value = wine_type.innerHTML.toUpperCase();
-    
-  //Loop through all cards and change color of all wine type texts depending on the value
-  
-  for (i=0; i<cards.length; i++) {
-    var card = cards[i].getElementsByClassName("wine-type");
-    if(card && card[0].innerHTML === 'Red Wine') {
-      card[0].style.color = "#A82548";
-    } else if (card && card[0].innerHTML === 'Rose'){
-      card[0].style.color = "#F98E72";
-    } else if (card && card[0].innerHTML === 'Sparkling Wine'){
-      card[0].style.color = "#F6CE97";
-    } else {
-      card[0].style.color = "#dbdd46";
-    }
-  }
-}
+//typeColor var hér
 
 
 //filter data:
