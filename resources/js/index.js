@@ -110,9 +110,9 @@ function filterPrice(selectedInput) {
     filter.price = 5000;
   } else if (value == 'UNDIR 10.000') {
     filter.price = 10000;
-  } /*else {
+  } else {
     filter.price = 20000
-  }*/;
+  };
 
   //query = buildFilter(filter);
   //filter data:
@@ -148,7 +148,7 @@ filterData = (data, query) => {
 filterDataPrice = (data) => {
   //console.log(query)
     const filteredData = data.filter( (item) => {
-      if (item['price'] === undefined || item[key] === null || parseInt(item['price']) > filter['price']) {
+      if (item['price'] === undefined || item['price'] === null || parseInt(item['price']) > filter['price']) {
         return false;
       }
       return true;
