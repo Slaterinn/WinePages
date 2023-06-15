@@ -136,7 +136,7 @@ buildFilter = (filter) => {
 filterData = (data, query) => {
     const filteredData = data.filter( (item) => {
         for (let key in query) {
-            if (item[key] === undefined || item[key] === null || !query[key].includes(item[key].toUpperCase()) ) {
+            if (item[key] === undefined || item[key] === null || !query[key].includes(item[key].toUpperCase()) || parseInt(item['price']) > filter['price']) {
                 return false;
             }
         }
@@ -144,7 +144,7 @@ filterData = (data, query) => {
     });
     return filteredData;
 }
-
+/*
 filterDataPrice = (data) => {
   //console.log(query)
     const filteredData = data.filter( (item) => {
@@ -154,7 +154,7 @@ filterDataPrice = (data) => {
       return true;
     });
     return filteredData;
-}
+}*/
 
 /*Bý til html partinn*/
 function appendData(data) {
