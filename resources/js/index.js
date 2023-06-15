@@ -1,16 +1,17 @@
-let data;
+const data;
 
 fetch('./resources/data/wines_json.json')
   .then(function (response) {
     return response.json();
   })
-  .then(function (fethced_data) {
-    appendData(fethced_data);
-    data = fethced_data;
+  .then(function (fetched_data) {
+    appendData(fetched_data);
+    data = fetched_data;
   })
   .catch(function (err) {
     console.log(err);
   });
+
 
 let filter = {
   category: '',
