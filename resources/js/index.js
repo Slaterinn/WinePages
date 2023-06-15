@@ -10,12 +10,7 @@ fetch('./resources/data/wines_json.json')
     result = filterData(data, query);
     appendData(result);
     
-    //sort
-    data = fetched_data.sort((a, b) => {
-    if (a.recommendation > b.recommendation) {
-      return -1;
-      }
-    });
+ 
  
     typeColor();
 
@@ -155,6 +150,14 @@ filterDataPrice = (data) => {
     });
     return filteredData;
 }*/
+
+
+//sort
+data = fetched_data.sort((a, b) => {
+if (a.recommendation > b.recommendation) {
+  return -1;
+  }
+});
 
 /*Bý til html partinn*/
 function appendData(data) {
