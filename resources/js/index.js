@@ -118,7 +118,7 @@ function filterPrice(selectedInput) {
 
   //query = buildFilter(filter);
   //filter data:
-  result = filterDataPrice(data, query);
+  result = filterData(data, query);
 
   appendData(result);
   typeColor();
