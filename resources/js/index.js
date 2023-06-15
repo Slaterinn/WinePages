@@ -9,9 +9,11 @@ fetch('./resources/data/wines_json.json')
     data = fetched_data;
     //sort
     data = fetched_data.sort((a, b) => {
-    if (a.recommendation > b.recommendation) {
-      return -1;
-    }
+      if (a.recommendation > b.recommendation) {
+        return -1;
+      }
+    });
+    
     function typeColor() {
       //Declare variables:
       var cards, wine_type, wine_type_value;
@@ -36,48 +38,7 @@ fetch('./resources/data/wines_json.json')
     }
     typeColor();
 
-
-    
-    buildFilter = (filter) => {
-        let query = {};
-        for (let keys in filter) {
-            if (filter[keys].length > 0) {
-                query[keys] = filter[keys];
-            }
-        }
-        return query;
-    }
-
-    filterData = (data, query) => {
-        const filteredData = data.filter( (item) => {
-            for (let key in query) {
-                if (item[key] === undefined || !query[key].includes(item[key].toUpperCase())) {
-                    return false;
-                }
-            }
-            return true;
-        });
-        return filteredData;
-    }
-
-    filterDataPrice = (data) => {
-      //console.log(query)
-        const filteredData = data.filter( (item) => {
-          //console.log(parseInt(item['price']));
-          //console.log(filter['price']);
-          //console.log(parseInt(item['price']) < filter['price']) 
-          if (item['price'] === undefined || parseInt(item['price']) > filter['price']) {
-            console.log('stemmir ekki')
-            return false;
-          }
-          console.log('stemmir')
-          return true;
-        });
-        return filteredData;
-    }
-
-    var query = buildFilter(filter);
-  });
+  
 
   })
   .catch(function (err) {
@@ -177,7 +138,46 @@ function filterPrice(selectedInput) {
   typeColor();
 }
 
-//filterar voru hér
+
+buildFilter = (filter) => {
+    let query = {};
+    for (let keys in filter) {
+        if (filter[keys].length > 0) {
+            query[keys] = filter[keys];
+        }
+    }
+    return query;
+}
+
+filterData = (data, query) => {
+    const filteredData = data.filter( (item) => {
+        for (let key in query) {
+            if (item[key] === undefined || !query[key].includes(item[key].toUpperCase())) {
+                return false;
+            }
+        }
+        return true;
+    });
+    return filteredData;
+}
+
+filterDataPrice = (data) => {
+  //console.log(query)
+    const filteredData = data.filter( (item) => {
+      //console.log(parseInt(item['price']));
+      //console.log(filter['price']);
+      //console.log(parseInt(item['price']) < filter['price']) 
+      if (item['price'] === undefined || parseInt(item['price']) > filter['price']) {
+        console.log('stemmir ekki')
+        return false;
+      }
+      console.log('stemmir')
+      return true;
+    });
+    return filteredData;
+}
+
+var query = buildFilter(filter);
 
 
 
