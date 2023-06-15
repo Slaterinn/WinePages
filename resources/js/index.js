@@ -407,6 +407,6 @@ function sortByField(selectedInput){
 
 
 //filter data:
-var result = filterData(data, query);
+/*var result = filterData(data, query);
 appendData(result);
-typeColor();
+typeColor();*/
