@@ -136,7 +136,7 @@ buildFilter = (filter) => {
 filterData = (data, query) => {
     const filteredData = data.filter( (item) => {
         for (let key in query) {
-            if (item[key] === undefined || !query[key].includes(item[key].toUpperCase()) || item[key] === null) {
+            if (item[key] === undefined || item[key] === null || !query[key].includes(item[key].toUpperCase()) ) {
                 return false;
             }
         }
