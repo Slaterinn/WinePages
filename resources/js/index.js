@@ -148,37 +148,13 @@ filterData = (data, query) => {
 filterDataPrice = (data) => {
   //console.log(query)
     const filteredData = data.filter( (item) => {
-      //console.log(parseInt(item['price']));
-      //console.log(filter['price']);
-      //console.log(parseInt(item['price']) < filter['price']) 
-      if (item['price'] === undefined || parseInt(item['price']) > filter['price']) {
-        console.log('stemmir ekki')
+      if (item['price'] === undefined || item[key] === null || parseInt(item['price']) > filter['price']) {
         return false;
       }
-      console.log('stemmir')
       return true;
     });
     return filteredData;
 }
-
-
-
-
-
-
-
-/*
-fetch('json_data.json')
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    appendData(data);
-  })
-  .catch(function (err) {
-    console.log(err);
-  });
-*/
 
 /*Bý til html partinn*/
 function appendData(data) {
