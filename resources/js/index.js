@@ -35,13 +35,14 @@ fetch('./resources/data/wines_json.json')
         }
       }
     }
+    typeColor();
 
 
 
 
 
 
-    
+
   })
   .catch(function (err) {
     console.log(err);
