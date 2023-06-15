@@ -7,30 +7,88 @@
         "width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <title>HTML Project</title>
 </head>
  
 <body>
-	<section class="hero is-medium page-header">
-  		<div class="hero-body">
-  			<div class="container has-text-centered">
-	    		<p class="title mb-6">
-	      		GERÐU GÓÐ VÍNKAUP
-	    		</p>
-	    		<p class="subtitle is-size-6">
-	      		Öll vín vínbúðarinnar ásamt meðmælum byggðum á einkunn og fjölda endurgjafa á Vivino og verði í vínbúðinni.
-	    		</p>
-	    	</div>
-  		</div>
-	</section>
+  <section class="hero is-medium page-header">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h3 class="is-size-1 has-text-weight-bold mb-6"">
+            GERÐU GÓÐ VÍNKAUP
+          </h3>
+          <h4 class="is-size-5">
+            Öll vín vínbúðarinnar ásamt meðmælum byggðum á einkunn og fjölda endurgjafa á Vivino og verði í vínbúðinni.
+          </h4>
+        </div>
+      </div>
+  </section>
+
+
+  <div class="container is-max-desktop">
     <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column">
-                </div>
-            </div>
-     	</div>
-     </section>
+      <div class="field">
+        <div class="control has-icons-left">
+          <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Leita eftir nafni..">
+          <span class="icon is-small is-left">
+            <i class="lni lni-search-alt"></i>
+          </span>
+        </div>
+      </div>
+
+    
+      <div class="field filter-type is-grouped">
+        <div class="control">
+          <div class="select">
+            <select onchange="filterType(this)">
+              <option>Allar víntegundir</option>
+              <option>Red Wine</option>
+              <option>Rose</option>
+              <option>Sparkling Wine</option>
+              <option>White Wine</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control">
+          <div class="select">
+            <select onchange="filterTaste(this)">
+              <option>Allir bragðflokkar</option>
+              <option>Létt og ósætt</option>
+              <option>Kröftugt og millisætt</option>
+              <option>Kröftugt og ósætt</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control">
+          <div class="select">
+            <select onchange="filterPrice(this)">
+              <option>Öll verð</option>
+              <option>Undir 3.000</option>
+              <option>Undir 5.000</option>
+              <option>Undir 10.000</option>
+              <option>Undir 20.000</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control">
+          <div class="select">
+            <select onchange="sortByField(this)">
+              <option>Raða eftir meðmælum</option>
+              <option>Raða eftir einkunn</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container"  id="listings">
+      </div>
+    </section>
+  </div>
 </body>
 
 <script type="text/javascript" src="resources\js\index.js"></script>
