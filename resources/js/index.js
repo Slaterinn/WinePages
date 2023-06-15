@@ -4,6 +4,7 @@ fetch('./resources/data/wines_json.json')
   })
   .then(function (data) {
     appendData(data);
+    return data;
   })
   .catch(function (err) {
     console.log(err);
