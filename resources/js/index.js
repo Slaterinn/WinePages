@@ -131,7 +131,7 @@ buildFilter = (filter) => {
 filterData = (data, query) => {
     const filteredData = data.filter( (item) => {
         for (let key in query) {
-            if (item[key] === undefined || item[key] === null || !query[key] == (item[key].toUpperCase()) || parseInt(item['price']) > filter['price']) {
+            if (item[key] === undefined || item[key] === null || !query[key] === (item[key].toUpperCase()) || parseInt(item['price']) > filter['price']) {
                 return false;
             }
         }
