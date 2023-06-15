@@ -1,6 +1,5 @@
 [
   {
-<<<<<<< HEAD
     "pk_wine": 26662,
     "vivino_id": 157726752,
     "wine_name": "Scuri Cabernet Sauvignon",
@@ -8,7 +7,6 @@
     "volume": "750.0",
     "abv": "13.0",
     "price": "2899.0",
-=======
     "pk_wine": 24653,
     "vivino_id": 143050537,
     "wine_name": "Rioja Vega Gran Reserva",
@@ -76289,6 +76287,5 @@
     "recommendation": "0.359714557833020328085139579115",
     "insert_date_vivino": "2023-03-08",
     "modified_date_vivino": "2023-03-08"
->>>>>>> eba9ea4cc976d3fd758d992e1dd40a26ec5ea13b
   }
 ]
