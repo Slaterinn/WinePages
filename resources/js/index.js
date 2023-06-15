@@ -153,7 +153,7 @@ filterDataPrice = (data) => {
 
 
 //sort
-data = fetched_data.sort((a, b) => {
+data = data.sort((a, b) => {
 if (a.recommendation > b.recommendation) {
   return -1;
   }
