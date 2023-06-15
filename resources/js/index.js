@@ -7,6 +7,12 @@ fetch('./resources/data/wines_json.json')
   .then(function (fetched_data) {
     appendData(fetched_data);
     data = fetched_data;
+    data = fetched_data.sort((a, b) => {
+    if (a.recommendation > b.recommendation) {
+      return -1;
+    }
+  });
+
   })
   .catch(function (err) {
     console.log(err);
@@ -365,12 +371,12 @@ function sortByField(selectedInput){
 
 
 //Raða json eftir recommendation BY DEFAULT
-  data = data.sort((a, b) => {
+ /* data = data.sort((a, b) => {
     if (a.recommendation > b.recommendation) {
       return -1;
     }
   });
-
+*/
 
 
 
