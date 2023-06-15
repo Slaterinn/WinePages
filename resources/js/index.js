@@ -1,10 +1,12 @@
+let data;
+
 fetch('./resources/data/wines_json.json')
   .then(function (response) {
     return response.json();
   })
-  .then(function (data) {
-    appendData(data);
-    return data;
+  .then(function (fethced_data) {
+    appendData(fethced_data);
+    data = fethced_data;
   })
   .catch(function (err) {
     console.log(err);
