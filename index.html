@@ -41,10 +41,10 @@
       <div class="field filter-type is-grouped">
         <div class="columns">
           <div class="column">
+            <label class="label">Víntegund</label>
             <div class="control">
               <div class="select">
                 <select onchange="filterType(this)">
-                  <option>Allar víntegundir</option>
                   <option>Red Wine</option>
                   <option>Rose</option>
                   <option>Sparkling Wine</option>
@@ -55,10 +55,10 @@
           </div>
 
           <div class="column">
+            <label class="label">Bragðflokkur</label>
             <div class="control">
               <div class="select is-multiple">
                 <select multiple size="6" onchange="filterTaste(this)">
-                  <option>Allir bragðflokkar</option>
                   <option>Eftirréttarvín - sætvín</option>
                   <option>Kröftugt og millisætt</option>
                   <option>Kröftugt og ósætt</option>
@@ -78,6 +78,7 @@
           </div>
 
           <div class="column">
+            <label class="label">Verðflokkur</label>
             <div class="control">
               <div class="select">
                 <select onchange="filterPrice(this)">
@@ -92,6 +93,7 @@
           </div>
 
           <div class="column">
+            <label class="label">Raða eftir</label>
             <div class="control">
               <div class="select">
                 <select onchange="sortByField(this)">

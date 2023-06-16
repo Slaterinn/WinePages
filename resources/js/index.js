@@ -339,7 +339,7 @@ function appendData(data) {
 
 function sortByField(selectedInput){
   var value = selectedInput.value.toUpperCase();
-  if (value == 'RAÐA EFTIR MEÐMÆLUM') {
+  if (value == 'MEÐMÆLUM') {
     console.log(value);
     //Raða json eftir recommendation
     data = data.sort((a, b) => {
