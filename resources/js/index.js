@@ -22,7 +22,7 @@ fetch('./resources/data/wines_json.json')
     typeColor();
 
 
-
+    showHideFilters();
 
 
 
@@ -397,3 +397,13 @@ function typeColor() {
 /*var result = filterData(data, query);
 appendData(result);
 typeColor();*/
+
+
+function showHideFilters() {
+  var x = document.getElementById("filter-menu");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
