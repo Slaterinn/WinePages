@@ -146,3 +146,7 @@ h3{
   stroke-dashoffset: -134;
   stroke-width: 6;
 }
+
+#filter-menu {
+    display:none;
+}

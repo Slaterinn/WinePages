@@ -22,7 +22,7 @@ fetch('./resources/data/wines_json.json')
     typeColor();
 
 
-    showHideFilters();
+    /*showHideFilters();*/
 
 
 
