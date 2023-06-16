@@ -43,8 +43,8 @@
           <div class="column">
             <label class="label">Víntegund</label>
             <div class="control">
-              <div class="select">
-                <select onchange="filterType(this)">
+              <div class="select is-multiple">
+                <select multiple size="4" onchange="filterType(this)">
                   <option>Red Wine</option>
                   <option>Rose</option>
                   <option>Sparkling Wine</option>
@@ -58,7 +58,7 @@
             <label class="label">Bragðflokkur</label>
             <div class="control">
               <div class="select is-multiple">
-                <select multiple size="6" onchange="filterTaste(this)">
+                <select multiple size="4" onchange="filterTaste(this)">
                   <option>Eftirréttarvín - sætvín</option>
                   <option>Kröftugt og millisætt</option>
                   <option>Kröftugt og ósætt</option>
@@ -80,8 +80,8 @@
           <div class="column">
             <label class="label">Verðflokkur</label>
             <div class="control">
-              <div class="select is-multiple">
-                <select multiple size="6" onchange="filterPrice(this)">
+              <div class="select">
+                <select onchange="filterPrice(this)">
                   <option>Öll verð</option>
                   <option>Undir 3.000</option>
                   <option>Undir 5.000</option>
