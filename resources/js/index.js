@@ -204,7 +204,7 @@ function appendData(data) {
     content.appendChild(columns);
 
     var column_left = document.createElement("div");
-    column_left.className = "column";
+    column_left.className = "column py-0";
     columns.appendChild(column_left);
 
     var producer_value = document.createElement("p");
@@ -269,7 +269,7 @@ function appendData(data) {
 
 
     var column_right = document.createElement("div");
-    column_right.className = "column";
+    column_right.className = "column py-0";
     columns.appendChild(column_right);
 
     var price_value = document.createElement("p");
