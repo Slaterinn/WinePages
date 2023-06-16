@@ -22,9 +22,6 @@ fetch('./resources/data/wines_json.json')
     typeColor();
 
 
-    /*showHideFilters();*/
-
-
 
   })
   .catch(function (err) {
