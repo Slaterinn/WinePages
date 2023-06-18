@@ -138,7 +138,7 @@ filterData = (data, query) => {
       return false;
     }
     for (let key in query) {
-        if (item[key] === undefined || item[key] === null || query[key] !== (item[key].toUpperCase()) || parseInt(item['price']) > filter['price'] ) {
+        if (item[key] === undefined || item[key] === null || !query[key].includes(item[key].toUpperCase()) || parseInt(item['price']) > filter['price'] ) {
             return false;
         }
     }
@@ -146,19 +146,8 @@ filterData = (data, query) => {
   });
   return filteredData;
 }
-/*
-filterDataPrice = (data) => {
-  //console.log(query)
-    const filteredData = data.filter( (item) => {
-      if (item['price'] === undefined || item['price'] === null || parseInt(item['price']) > filter['price']) {
-        return false;
-      }
-      return true;
-    });
-    return filteredData;
-}*/
 
-
+//query[key] !== (item[key].toUpperCase())
 
 
 /*Bý til html partinn*/
@@ -167,7 +156,6 @@ function appendData(data) {
   mainContainer.innerHTML = '';
 
   for (var i = 0; i < data.length; i++) {
-
 
     var card = document.createElement("div");
     card.className = "card p-4 py-4 has-background-warning-light rounded-xl is-cursor-pointer transform is-duration-300 hover-translate-y";
