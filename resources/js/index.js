@@ -89,7 +89,7 @@ function filterTaste(selectedInput) {
   var remainingLetters = value.slice(1)
   var valueInitCap = firstLetterCap + remainingLetters*/
   //Tek input frá filter og tæmi filter ef það er allt valið:
-  if (valueInitCap == 'Allt valið') {
+  if (value == 'Allt valið') {
     filter.taste_group = '';
   } else {
     filter.taste_group = value;  
