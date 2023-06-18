@@ -81,9 +81,9 @@ function filterType(selectedInput) {
 
 
 function filterTaste(selectedInput) {
-  var value = selectedInput.value.toUpperCase();
+  var value = selectedInput.value;
   //Tek input frá filter og tæmi filter ef það er allt valið:
-  if (value == 'ALLIR BRAGÐFLOKKAR') {
+  if (value == 'Allt valið') {
     filter.taste_group = '';
   } else {
     filter.taste_group = value;  
@@ -138,7 +138,7 @@ filterData = (data, query) => {
       return false;
     }
     for (let key in query) {
-        if (item[key] === undefined || item[key] === null || !query[key].includes(item[key].toUpperCase()) || parseInt(item['price']) > filter['price'] ) {
+        if (item[key] === undefined || item[key] === null || !query[key].includes(item[key]) || parseInt(item['price']) > filter['price'] ) {
             return false;
         }
     }
