@@ -82,10 +82,10 @@ function filterType(selectedInput) {
 
 
 function filterTaste(selectedInput) {
-  var value = selectedInput.value;
+  var value = selectedInput.value.toUpperCase();
   console.log(value);
   //Tek input frá filter og tæmi filter ef það er allt valið:
-  if (value == 'Allt valið') {
+  if (value == 'ALLT VALIÐ') {
     filter.sweetness = '';
   } else {
     filter.sweetness = value;  
@@ -140,7 +140,7 @@ filterData = (data, query) => {
       return false;
     }
     for (let key in query) {
-        if (item[key] === undefined || item[key] === null || query[key] !==(item[key]) || parseInt(item['price']) > filter['price'] ) {
+        if (item[key] === undefined || item[key] === null || query[key] !==(item[key]).toUpperCase() || parseInt(item['price']) > filter['price'] ) {
             return false;
         }
     }
