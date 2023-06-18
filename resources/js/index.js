@@ -64,6 +64,7 @@ function searchFunction() {
 
 function filterType(selectedInput) {
   var value = selectedInput.value.toUpperCase();  
+  console.log(value);
   //Tek input frá filter og tæmi filter ef það er allt valið:
   if (value == 'ALLAR VÍNTEGUNDIR') {
     filter.category = '';
@@ -82,6 +83,7 @@ function filterType(selectedInput) {
 
 function filterTaste(selectedInput) {
   var value = selectedInput.value;
+  console.log(value);
   /*var firstLetter = value.charAt(0)
   var firstLetterCap = firstLetter.toUpperCase()
   var remainingLetters = value.slice(1)
