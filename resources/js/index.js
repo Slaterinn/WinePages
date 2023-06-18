@@ -82,11 +82,15 @@ function filterType(selectedInput) {
 
 function filterTaste(selectedInput) {
   var value = selectedInput.value;
+  var firstLetter = value.charAt(0)
+  var firstLetterCap = firstLetter.toUpperCase()
+  var remainingLetters = value.slice(1)
+  var valueInitCap = firstLetterCap + remainingLetters
   //Tek input frá filter og tæmi filter ef það er allt valið:
-  if (value == 'Allt valið') {
+  if (valueInitCap == 'Allt valið') {
     filter.taste_group = '';
   } else {
-    filter.taste_group = value;  
+    filter.taste_group = valueInitCap;  
   }
 
   query = buildFilter(filter);
