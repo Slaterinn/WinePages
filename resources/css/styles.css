@@ -7,6 +7,10 @@ h3{
   margin-top: 0em !important;
 }
 
+.social-icons{
+  font_size = 2em;
+}
+
 .card{
   margin-top: 2em;
 }
