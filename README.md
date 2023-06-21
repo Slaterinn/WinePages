@@ -1,5 +1,5 @@
 # WinePages
-Scraped data from vinbudin and vivino to create a reccomendation for buyers
+Öll 750ml vín á flösku sem vínbúðin selur. Búið er að bæta við meðmælum sem búin eru til út frá einkunn og fjölda endurgjafa á Vivino og verði vínbúðarinnar.
 
 Öllum vínum frá vínbúðinni er safnað daglega með python scraper.
 
