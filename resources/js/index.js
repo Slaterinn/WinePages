@@ -33,7 +33,9 @@ let filter = {
   category: '',
   sweetness: '',
   boldness: '',
-  price: 1000000
+  price: 1000000,
+  is_organic: '',
+  food_pairing: ''
 }
 
 
@@ -64,10 +66,10 @@ function searchFunction() {
 
 
 function filterType(selectedInput) {
-  var value = selectedInput.value.toUpperCase();  
+  var value = selectedInput.value;  
   console.log(value);
   //Tek input frá filter og tæmi filter ef það er allt valið:
-  if (value == 'ALLAR VÍNTEGUNDIR') {
+  if (value == 'Allar víntegundir') {
     filter.category = '';
   } else {
     filter.category = value;  
@@ -83,10 +85,10 @@ function filterType(selectedInput) {
 
 
 function filterTaste(selectedInput) {
-  var value = selectedInput.value.toUpperCase();
+  var value = selectedInput.value;
   console.log(value);
   //Tek input frá filter og tæmi filter ef það er allt valið:
-  if (value == 'ALLT VALIÐ') {
+  if (value == 'Allt valið') {
     filter.sweetness = '';
   } else {
     filter.sweetness = value;  
@@ -101,10 +103,10 @@ function filterTaste(selectedInput) {
 }
 
 function filterTaste2(selectedInput) {
-  var value = selectedInput.value.toUpperCase();
+  var value = selectedInput.value;
   console.log(value);
   //Tek input frá filter og tæmi filter ef það er allt valið:
-  if (value == 'ALLT VALIÐ') {
+  if (value == 'Allt valið') {
     filter.boldness = '';
   } else {
     filter.boldness = value;  
@@ -118,17 +120,87 @@ function filterTaste2(selectedInput) {
   typeColor();
 }
 
+
+function filterOrganic(selectedInput) {
+  var value = selectedInput.value;
+  if (value == 'Lífræn vín') {
+    value = 'true'
+  } else {
+    value = ''
+  }
+
+  console.log(value);
+  //Tek input frá filter og tæmi filter ef það er allt valið:
+  if (value == 'Öll vín') {
+    filter.is_organic = '';
+  } else {
+    filter.is_organic = value;  
+  }
+
+  query = buildFilter(filter);
+  //filter data:
+  result = filterData(data, query);
+
+  appendData(result);
+  typeColor();
+}
+
+
+function filterFood(selectedInput) {
+  var value = selectedInput.value;
+  console.log(value);
+  if (value == 'Nautakjöt') {
+    value = 'E'
+  } else if (value == 'Grillmatur') {
+    value = 'J'
+  } else if (value == 'Austurlenskt') {
+    value = 'K'
+  } else if (value == 'Fiskur') {
+    value = 'C'
+  } else if (value == 'Grænmetisréttir') {
+    value = 'I'
+  } else if (value == 'Lambakjöt') {
+    value = 'F'
+  } else if (value == 'Pasta') {
+    value = 'M'
+  } else if (value == 'Sushi') {
+    value = '4'
+  } else if (value == 'Villibráð') {
+    value = 'H'
+  } else if (value == 'Án matar') {
+    value = 'W'
+  } else {
+    value = ''
+  }
+
+  console.log(value);
+  //Tek input frá filter og tæmi filter ef það er allt valið:
+  if (value == 'Allt valið') {
+    filter.food_pairing = '';
+  } else {
+    filter.food_pairing = value;  
+  }
+
+  query = buildFilter(filter);
+  //filter data:
+  result = filterData(data, query);
+
+  appendData(result);
+  typeColor();
+}
+
+
 function filterPrice(selectedInput) {
-  var value = selectedInput.value.toUpperCase();
+  var value = selectedInput.value;
   //Tek input frá filter og tæmi filter ef það er allt valið:
 
-  if (value == 'ÖLL VERÐ') {
+  if (value == 'Öll verð') {
     filter.price = 1000000;
-  } else if (value == 'UNDIR 3.000') {
+  } else if (value == 'Undir 3.000') {
     filter.price = 3000;  
-  } else if (value == 'UNDIR 5.000') {
+  } else if (value == 'Undir 5.000') {
     filter.price = 5000;
-  } else if (value == 'UNDIR 10.000') {
+  } else if (value == 'Undir 10.000') {
     filter.price = 10000;
   } else {
     filter.price = 20000
@@ -158,8 +230,12 @@ filterData = (data, query) => {
     if(parseInt(item['price']) > filter['price']){
       return false;
     }
+
     for (let key in query) {
-        if (item[key] === undefined || item[key] === null || query[key] !==(item[key]).toUpperCase() || parseInt(item['price']) > filter['price'] ) {
+        console.log(item['wine_name']);
+        console.log(item[key] + ' - ' + query[key] )
+        console.log('passar food pairing? ' + item[key].includes(query[key]))
+        if (item[key] === undefined || item[key] === null || !item[key].includes(query[key]) || parseInt(item['price']) > filter['price'] ) {
           return false;
         }
     }
@@ -167,6 +243,8 @@ filterData = (data, query) => {
   });
   return filteredData;
 }
+
+
 
 //query[key] !== (item[key].toUpperCase())
 
@@ -352,6 +430,28 @@ function sortByField(selectedInput){
     //Raða json eftir recommendation
     data = data.sort((a, b) => {
       if (a.recommendation > b.recommendation) {
+        return -1;
+      }
+    })
+    var result = filterData(data, query);
+    appendData(result);
+    typeColor();
+  } else if (value == 'VERÐI (DÝRAST EFST)') {
+    console.log(value);
+    //Raða json eftir rating
+    data = data.sort((a, b) => {
+      if (parseInt(a.price) > parseInt(b.price) ) {
+        return -1;
+      }
+    })
+    var result = filterData(data, query);
+    appendData(result);
+    typeColor();
+  } else if (value == 'VERÐI (ÓDÝRAST EFST)') {
+    console.log(value);
+    //Raða json eftir rating
+    data = data.sort((a, b) => {
+      if (parseInt(b.price) > parseInt(a.price) ) {
         return -1;
       }
     })

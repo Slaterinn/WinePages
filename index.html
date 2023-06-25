@@ -74,8 +74,8 @@
           <div class="column">
             <label class="label">Víntegund</label>
             <div class="control">
-              <div class="select is-multiple">
-                <select multiple size="4" onchange="filterType(this)">
+              <div class="select is-small">
+                <select onchange="filterType(this)">
                   <option>Allar víntegundir</option>
                   <option>Red Wine</option>
                   <option>Rose</option>
@@ -89,7 +89,7 @@
           <div class="column">
             <label class="label">Fylling</label>
             <div class="control">
-              <div class="select">
+              <div class="select is-small">
                 <select onchange="filterTaste2(this)">
                   <option>Allt valið</option>
                   <option>Kröftugt</option>
@@ -104,7 +104,7 @@
           <div class="column">
             <label class="label">Sætleiki</label>
             <div class="control">
-              <div class="select">
+              <div class="select is-small">
                 <select onchange="filterTaste(this)">
                   <option>Allt valið</option>
                   <option>Ósætt</option>
@@ -120,7 +120,7 @@
           <div class="column">
             <label class="label">Verðflokkur</label>
             <div class="control">
-              <div class="select">
+              <div class="select is-small">
                 <select onchange="filterPrice(this)">
                   <option>Öll verð</option>
                   <option>Undir 3.000</option>
@@ -132,13 +132,53 @@
             </div>
           </div>
 
+          
+        </div>
+      </div>
+      <div class="field filter-type is-grouped">
+        <div class="columns">
+          <div class="column">
+            <label class="label">Lífrænt</label>
+            <div class="control">
+              <div class="select is-small">
+                <select onchange="filterOrganic(this)">
+                  <option>Öll vín</option>
+                  <option>Lífræn vín</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        
+
+          <div class="column">
+            <label class="label">Matarpörun</label>
+            <div class="control">
+              <div class="select is-small">
+                <select onchange="filterFood(this)">
+                  <option>Allt valið</option>
+                  <option>Austurlenskt</option>
+                  <option>Fiskur</option>
+                  <option>Grillmatur</option>
+                  <option>Grænmetisréttir</option>
+                  <option>Nautakjöt</option>
+                  <option>Lambakjöt</option>
+                  <option>Pasta</option>
+                  <option>Sushi</option>
+                  <option>Villibráð</option>
+                  <option>Án matar</option>
+                </select>
+              </div>
+            </div>
+          </div>
           <div class="column">
             <label class="label">Raða eftir</label>
             <div class="control">
-              <div class="select">
+              <div class="select is-small">
                 <select onchange="sortByField(this)">
                   <option>Meðmælum</option>
                   <option>Einkunn</option>
+                  <option>Verði (Dýrast efst)</option>
+                  <option>Verði (Ódýrast efst)</option>
                 </select>
               </div>
             </div>
