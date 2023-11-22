@@ -365,7 +365,7 @@ function appendData(data) {
     column_left.appendChild(area);
     };
     
-    if (taste_value.innerHTML !== ""){
+    if (taste_value.innerHTML !== "" && taste_value.innerHTML !== "N/F" ){
     column_left.appendChild(taste_value);
     column_left.appendChild(taste);
     };
