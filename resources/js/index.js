@@ -249,6 +249,7 @@ filterData = (data, query) => {
 //query[key] !== (item[key].toUpperCase())
 
 
+
 /*Bý til html partinn*/
 function appendData(data) {
   var mainContainer = document.getElementById("listings");
@@ -257,7 +258,7 @@ function appendData(data) {
   for (var i = 0; i < data.length; i++) {
 
     var card = document.createElement("div");
-    card.className = "card p-4 py-4 has-background-warning-light rounded-xl is-cursor-pointer transform is-duration-300 hover-translate-y";
+    card.className = "card p-4 py-4 rounded-xl is-cursor-pointer transform is-duration-300 hover-translate-y";
     mainContainer.appendChild(card);
 
     var card_content = document.createElement("div");
@@ -268,9 +269,28 @@ function appendData(data) {
     content.className = "content";
     card_content.appendChild(content);
 
+    wine_type_var = data[i].category
+    switch(wine_type_var) {
+      case "Red Wine":
+        wine_type_sel = "Rauðvín";
+        break;
+      case "White Wine":
+        wine_type_sel = "Hvítvín";
+        break;
+      case "Rose":
+        wine_type_sel = "Rósavín";
+        break;
+      case "Sparkling Wine":
+        wine_type_sel = "Freyðivín";
+        break;
+      default:
+        wine_type_sel = "N/A";
+        break;
+    }
+
     var wine_type = document.createElement("h5");
     wine_type.className = "wine-type";
-    wine_type.innerHTML= data[i].category;
+    wine_type.innerHTML = wine_type_sel;
     content.appendChild(wine_type);
 
     var wine_name = document.createElement("h3");
@@ -279,7 +299,7 @@ function appendData(data) {
     content.appendChild(wine_name);
 
     var wine_rec = document.createElement("h4");
-    wine_rec.className = "is-size-5 mb-5";
+    wine_rec.className = "is-size-3 mb-5";
     wine_rec.innerHTML = 'Meðmæli: ' + parseInt(data[i].recommendation*100) + '%';
     content.appendChild(wine_rec);
 
@@ -292,7 +312,7 @@ function appendData(data) {
     columns.appendChild(column_left);
 
     var producer_value = document.createElement("p");
-    producer_value.className = "title is-size-6 mt-2 has-text-grey-dark";
+    producer_value.className = "title is-size-5 mt-2 has-text-grey-dark";
     if (data[i].producer_vivino = 'N/F') {
       producer_value.innerHTML = data[i].producer
     } else {
@@ -300,11 +320,11 @@ function appendData(data) {
     }
     
     var producer = document.createElement("p");
-    producer.className = "subtitle is-7 pt-1 has-text-grey is-uppercase";
+    producer.className = "subtitle is-size-6 pt-1 has-text-grey is-uppercase";
     producer.innerHTML = 'Framleiðandi';
 
     var country_value = document.createElement("p");
-    country_value.className = "title is-size-6 mt-2 has-text-grey-dark";
+    country_value.className = "title is-size-5 mt-2 has-text-grey-dark";
     //Gerði land initCap
     var country_text = data[i].country
     var firstLetter = country_text.charAt(0)
@@ -314,21 +334,21 @@ function appendData(data) {
 
     country_value.innerHTML = countryInitCap;
     var country = document.createElement("p");
-    country.className = "subtitle is-7 pt-1 has-text-grey is-uppercase";
+    country.className = "subtitle is-size-6 pt-1 has-text-grey is-uppercase";
     country.innerHTML = "Land";
 
     var area_value = document.createElement("p");
-    area_value.className = "title is-size-6 mt-2 has-text-grey-dark";
+    area_value.className = "title is-size-5 mt-2 has-text-grey-dark";
     area_value.innerHTML = data[i].origin_place;
     var area = document.createElement("p");
-    area.className = "subtitle is-7 pt-1 has-text-grey is-uppercase";
+    area.className = "subtitle is-size-6 pt-1 has-text-grey is-uppercase";
     area.innerHTML = "Svæði";
 
     var taste_value = document.createElement("p");
-    taste_value.className = "title is-size-6 mt-2 has-text-grey-dark";
+    taste_value.className = "title is-size-5 mt-2 has-text-grey-dark";
     taste_value.innerHTML = data[i].taste_group;
     var taste = document.createElement("p");
-    taste.className = "subtitle is-7 pt-1 has-text-grey is-uppercase";
+    taste.className = "subtitle is-size-6 pt-1 has-text-grey is-uppercase";
     taste.innerHTML = "Bragðflokkur";
 
     if (producer_value.innerHTML !== ""){
@@ -357,25 +377,32 @@ function appendData(data) {
     columns.appendChild(column_right);
 
     var price_value = document.createElement("p");
-    price_value.className = "title is-size-6 mt-2 has-text-grey-dark";
+    price_value.className = "title is-size-5 mt-2 has-text-grey-dark";
     price_value.innerHTML = parseInt(data[i].price).toLocaleString("de-DE");
     var price = document.createElement("p");
-    price.className = "subtitle is-7 pt-1 has-text-grey is-uppercase";
+    price.className = "subtitle is-size-6 pt-1 has-text-grey is-uppercase";
     price.innerHTML = "Verð";
 
     var rating_value = document.createElement("p");
-    rating_value.className = "title is-size-6 mt-2 has-text-grey-dark";
+    rating_value.className = "title is-size-5 mt-2 has-text-grey-dark";
     rating_value.innerHTML = data[i].rating;
     var rating = document.createElement("p");
-    rating.className = "subtitle is-7 pt-1 has-text-grey is-uppercase";
+    rating.className = "subtitle is-size-6 pt-1 has-text-grey is-uppercase";
     rating.innerHTML = "Einkunn";
 
     var grapes_value = document.createElement("p");
-    grapes_value.className = "title is-size-6 mt-2 has-text-grey-dark";
+    grapes_value.className = "title is-size-5 mt-2 has-text-grey-dark";
     grapes_value.innerHTML = data[i].grapes;
     var grapes = document.createElement("p");
-    grapes.className = "subtitle is-7 pt-1 has-text-grey is-uppercase";
+    grapes.className = "subtitle is-size-6 pt-1 has-text-grey is-uppercase";
     grapes.innerHTML = "Þrúgur";
+
+    var grapes_value = document.createElement("p");
+    grapes_value.className = "title is-size-5 mt-2 has-text-grey-dark";
+    grapes_value.innerHTML = data[i].seller;
+    var grapes = document.createElement("p");
+    grapes.className = "subtitle is-size-6 pt-1 has-text-grey is-uppercase";
+    grapes.innerHTML = "Söluaðili";
 
 
 
@@ -404,7 +431,7 @@ function appendData(data) {
 
     var footer_link_vin = document.createElement("a");
     footer_link_vin.href = data[i].link;
-    footer_link_vin.innerHTML = 'Vínbúðin';
+    footer_link_vin.innerHTML = data[i].seller;
     footer_link_vin.setAttribute('target', '_blank');
     footer_content_vin.appendChild(footer_link_vin);
 
@@ -515,3 +542,27 @@ function showHideFilters() {
     x.style.display = "none";
   }
 }
+
+
+//Hamburger menu is active change
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Add a click event on each of them
+  $navbarBurgers.forEach( el => {
+    el.addEventListener('click', () => {
+
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+
+    });
+  });
+
+});

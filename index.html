@@ -25,9 +25,7 @@
   <noscript>Cookie Consent by <a href="https://www.freeprivacypolicy.com/">Free Privacy Policy Generator</a></noscript>
   <!-- End Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
 
-  <!-- Below is the link that users can use to open Preferences Center to change their preferences. Do not modify the ID parameter. Place it where appropriate, style it as needed. -->
-
-  <a href="#" id="open_preferences_center">Update cookies preferences</a>
+ 
 
 
   
@@ -38,24 +36,52 @@
   <link rel="stylesheet" href="resources/css/styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-  <link rel="apple-touch-icon" sizes="180x180" href="resources/img/Logo.jpg">
-  <link rel="icon" sizes="180x180" href="resources/img/Logo.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="resources/img/Logo.png">
+  <link rel="icon" sizes="180x180" href="resources/img/Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;500;600&display=swap" rel="stylesheet">
   <title>Góð vínkaup</title>
 </head>
  
 <body>
+  
+  <nav class="navbar" id="main-navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item navbar-title" id="main-navbar-title" href="#">
+        GÓÐ VÍNKAUP
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-selection">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar-selection" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="#">
+          Vín
+        </a>
+        <a class="navbar-item" href="#">
+          Bjór (væntanlegt)
+        </a>
+      </div>
+    </div>
+  </nav>
   <section class="hero is-medium page-header">
       <div class="hero-body">
         <div class="container has-text-centered">
-          <h1 class="is-size-1 has-text-weight-bold mb-6"">
-            GERÐU GÓÐ VÍNKAUP
+        
+
+              
+          <h1 class="is-size-1 has-text-weight-bold mb-4" id="site-title">
+            GÓÐ VÍNKAUP
           </h1>
-          <p class="is-size-5">
-            Öll 750ml vín á flösku sem eru í sölu hjá ÁTVR. Búið er að bæta við meðmælum sem búin eru til út frá einkunn og fjölda endurgjafa á Vivino og verði vínbúðarinnar. Þannig gerir þú bara góð vínkaup.
-            
-          </p>
-          <p class="is-size-5">
-            Höfundur síðunnar er Þröstur Pétursson. Öll gögn eiga ÁTVR og Vivino.
+          <p class="is-size-5" id="site-subtitle">
+            Hér er hægt að skoða öll vín sem til eru hjá ÁTVR og Sante og eru seld í 750cl flöskum ásamt einkunn þeirra frá Vivino.
+            Búið er að bæta við meðmælum sem búin eru til út frá einkunn og fjölda endurgjafa frá Vivino og verði hjá söluaðila. Með því að fylgja meðmælunum þá gerir þú bara góð vínkaup.
+            <br><br>
+            Höfundur síðunnar er Þröstur Pétursson og hægt er að hafa samband með því að senda póst á throsturp@gmail.com eða senda skilaboð á Linkedin. Öll gögn eiga ÁTVR og Vivino.
           </p>
 
           <div class="social-icons pt-2">
@@ -214,6 +240,12 @@
       </div>
     </section>
   </div>
+
+   <!-- Below is the link that users can use to open Preferences Center to change their preferences. Do not modify the ID parameter. Place it where appropriate, style it as needed. -->
+
+  <a href="#" id="open_preferences_center">Update cookies preferences</a>
+
+
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
