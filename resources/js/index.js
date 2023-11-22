@@ -419,6 +419,11 @@ function appendData(data) {
     column_right.appendChild(grapes_value);
     column_right.appendChild(grapes);
     };
+
+    if (seller_value.innerHTML !== ""){
+    column_right.appendChild(seller_value);
+    column_right.appendChild(seller);
+    };
     //Bæti við linkunum neðst í card
     var footer = document.createElement("footer");
     footer.className = "card-footer";
