@@ -249,7 +249,6 @@ filterData = (data, query) => {
 //query[key] !== (item[key].toUpperCase())
 
 
-
 /*Bý til html partinn*/
 function appendData(data) {
   var mainContainer = document.getElementById("listings");
@@ -510,14 +509,14 @@ function typeColor() {
   
   for (i=0; i<cards.length; i++) {
     var card = cards[i].getElementsByClassName("wine-type");
-    if(card && card[0].innerHTML === 'Red Wine') {
+    if(card && card[0].innerHTML === 'Rauðvín') {
       card[0].style.color = "#A82548";
-    } else if (card && card[0].innerHTML === 'Rose'){
+    } else if (card && card[0].innerHTML === 'Rósavín'){
       card[0].style.color = "#F98E72";
-    } else if (card && card[0].innerHTML === 'Sparkling Wine'){
-      card[0].style.color = "#F6CE97";
+    } else if (card && card[0].innerHTML === 'Freyðivín'){
+      card[0].style.color = "#FEC67A";
     } else {
-      card[0].style.color = "#dbdd46";
+      card[0].style.color = "#A9AE03";
     }
   }
 }
@@ -542,7 +541,6 @@ function showHideFilters() {
     x.style.display = "none";
   }
 }
-
 
 //Hamburger menu is active change
 document.addEventListener('DOMContentLoaded', () => {
