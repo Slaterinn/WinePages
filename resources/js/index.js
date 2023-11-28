@@ -437,6 +437,7 @@ function appendData(data) {
     footer_link_vin.href = data[i].link;
     footer_link_vin.innerHTML = data[i].seller;
     footer_link_vin.setAttribute('target', '_blank');
+    footer_link_vin.setAttribute('rel', 'nofollow');
     footer_content_vin.appendChild(footer_link_vin);
 
     var footer_content_viv = document.createElement("p");
@@ -447,6 +448,7 @@ function appendData(data) {
     footer_link_viv.href = data[i].link_vivino;
     footer_link_viv.innerHTML = 'Vivino';
     footer_link_viv.setAttribute('target', '_blank');
+    footer_link_vin.setAttribute('rel', 'nofollow');
     footer_content_viv.appendChild(footer_link_viv);
   }
 }
