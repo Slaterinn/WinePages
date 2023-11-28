@@ -258,6 +258,7 @@ function appendData(data) {
 
     var card = document.createElement("div");
     card.className = "card p-4 py-4 rounded-xl is-cursor-pointer transform is-duration-300 hover-translate-y";
+    card.setAttribute('itemscope itemtype', 'https://schema.org/Product');
     mainContainer.appendChild(card);
 
     var card_content = document.createElement("div");
@@ -295,11 +296,13 @@ function appendData(data) {
     var wine_name = document.createElement("h3");
     wine_name.className = "is-size-2 has-text-weight-bold mb-6";
     wine_name.innerHTML= data[i].wine_name;
+    wine_name.setAttribute('itemprop', 'name');
     content.appendChild(wine_name);
 
     var wine_rec = document.createElement("h4");
     wine_rec.className = "is-size-3 mb-5";
     wine_rec.innerHTML = 'Meðmæli: ' + parseInt(data[i].recommendation*100) + '%';
+    wine_rec.setAttribute('itemprop', 'Recommendation');
     content.appendChild(wine_rec);
 
     var columns = document.createElement("div");
