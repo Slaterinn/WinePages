@@ -258,7 +258,8 @@ function appendData(data) {
 
     var card = document.createElement("div");
     card.className = "card p-4 py-4 rounded-xl is-cursor-pointer transform is-duration-300 hover-translate-y";
-    card.setAttribute('itemscope itemtype', 'https://schema.org/Product');
+    card.setAttribute('itemscope');
+    card.setAttribute('itemtype', 'https://schema.org/Product');
     mainContainer.appendChild(card);
 
     var card_content = document.createElement("div");
